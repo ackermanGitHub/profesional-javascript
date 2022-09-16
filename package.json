@@ -1,0 +1,23 @@
+{
+  "name": "profesional-javascript",
+  "version": "1.0.0",
+  "description": "In this project we are going to develop an application called: Platzi Video. In every video platform there is a special component in the development, we have to know how to implement the MediPlayer",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ackermanGitHub/profesional-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ackermanGitHub/profesional-javascript/issues"
+  },
+  "homepage": "https://github.com/ackermanGitHub/profesional-javascript#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
