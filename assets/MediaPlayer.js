@@ -1,20 +1,20 @@
-class MediaPlayer {
-    constructor(config) {
-        this.media = config.el;
+export default class MediaPlayer {
+    constructor({video, plugins}) {
+        this.media = video;
+        this.plugins = plugins || [];
+        this._initPlugins();
     }
-    play() {
-        this.media.play();
-    }
-    pause() {
-        this.media.pause();
+    _initPlugins = function () {
+        this.plugins.forEach(plugin => {
+            plugin.run(this);
+        });
     }
     togglePlay() {
-        if (this.media.paused) {
-            this.play();
-        } else {
-            this.pause();
-        }
+        this.media.paused
+            ? this.media.play()
+            : this.media.pause();
+    }
+    toggleMute() {
+        this.media.muted = !this.media.muted;
     }
 }
-
-export default MediaPlayer;
