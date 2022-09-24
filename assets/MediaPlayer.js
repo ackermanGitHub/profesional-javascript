@@ -3,7 +3,7 @@ export default class MediaPlayer {
         this.media = video;
         this.plugins = plugins || [];
         this._initPlugins();
-    }
+    } 
     _initPlugins = function () {
         this.plugins.forEach(plugin => {
             plugin.run(this);
