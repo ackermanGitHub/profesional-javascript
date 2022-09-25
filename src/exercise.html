@@ -8,8 +8,6 @@
     <title>exercise</title>
 </head>
 <body>
-    <a href="/ejercicios/">Go back</a>
-
     <ul>
       <li><button id="sequence">Get Top Movies in Sequence</button></li>
       <li><button id="parallel">Get Top Movies in Parallel</button></li>
@@ -27,7 +25,7 @@
       // Crear función donde obtenemos el primer request que llegue
 
       // The Movie Database API: https://developers.themoviedb.org/3/getting-started/introduction
-      const apiKey = 'b89fc45c2067cbd33560270639722eae';
+      const apiKey = 'fbf6400c41182e28125d3f98e5d03f0b';
 
       async function getMovie(id) {
         const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
