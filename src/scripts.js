@@ -1,5 +1,3 @@
-
-
 // Ejemplo: renderMovies([{ title: "Spider-Man", release_date: "2019-06-30", poster_path: "/rjbNpRMoVvqHmhmksbokcyCr7wn.jpg" }])
 // Traducir las funciones de usar thens a usar async/await
 // Crear función para que no nos gastemos la cantidad de requests demasiado rapido
@@ -8,17 +6,24 @@
 // Crear función donde obtenemos el primer request que llegue
 
 // The Movie Database API: https://developers.themoviedb.org/3/getting-started/introduction
-const apiKey = 'fbf6400c41182e28125d3f98e5d03f0b';
+const API_KEY = 'fbf6400c41182e28125d3f98e5d03f0b';
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3',
+    headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+    },
+    params: {
+        'api_key': API_KEY,
+    },
+});
 
 async function getMovie(id) {
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
-  const response = await fetch(url);
-  const data = await response.json();
+  const {data} = await api(`/movie/${id}`);
   return data;
 }
 
 async function getPopularMovies() {
-  const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+  const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
   const response = await fetch(url);
   const data = await response.json();
   return data.results;
