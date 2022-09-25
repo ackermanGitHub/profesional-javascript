@@ -23,9 +23,11 @@ async function getMovie(id) {
 }
 
 async function getPopularMovies() {
-  const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
-  const response = await fetch(url);
-  const data = await response.json();
+  const {data} = await api("/discover/movie", {
+    params: {
+        sort_by: "popularity.desc",
+    }
+  });
   return data.results;
 }
 
