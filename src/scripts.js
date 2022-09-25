@@ -78,6 +78,11 @@ async function getTopMoviesInParallel() {
   const ids = await getTopMoviesIds();
   const moviePromises = ids.map(id => getMovie(id));
 
+  console.log(moviePromises[0]);
+  moviePromises[0].then(x => {
+    console.log(x);
+  })
+
   const movies = await Promise.all(moviePromises);
 
   return movies;
