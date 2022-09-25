@@ -29,7 +29,7 @@ async function getPopularMovies() {
   return data.results;
 }
 
-async function getTopMoviesIds(n = 3) {
+async function getTopMoviesIds(n = 5) {
   // return getPopularMovies().then(popularMovies =>
   //   popularMovies.slice(0, n).map(movie => movie.id)
   // );
