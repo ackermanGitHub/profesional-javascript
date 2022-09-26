@@ -5,7 +5,12 @@ const video = document.querySelector('.movie');
 const playButton = document.querySelector('.play-btn'); 
 const muteButton = document.querySelector('.mute-btn');
 
-const player = new MediaPlayer({video, plugins: [new AutoPlay()]});
+const player = new MediaPlayer({
+    video, 
+    plugins: [
+        new AutoPlay()
+    ]
+});
 playButton.onclick = () => player.togglePlay();
 muteButton.onclick = () => player.toggleMute();
     
