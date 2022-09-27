@@ -13,4 +13,6 @@ const player = new MediaPlayer({
 });
 playButton.onclick = () => player.togglePlay();
 muteButton.onclick = () => player.toggleMute();
-    
+
+var distance = window.Levenshtein.get('back', 'book');
+console.log(distance);
