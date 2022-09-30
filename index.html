@@ -17,13 +17,20 @@
       <p>An extensible media player.</p>
     </header>
 
-    <main class="container"> 
-      <video class="movie">
-        <source src="./assets/BigBuckBunny.mp4" />
-      </video>
-
-      <button class="play-btn">Play/Pause</button>
-      <button class="mute-btn">Mute</button>
+    <main> 
+      <section class="media_player-section">
+        <video class="movie">
+          <source src="./assets/BigBuckBunny.mp4" />
+        </video>
+  
+        <button class="play_btn">Play/Pause</button>
+        <button class="mute_btn">Mute</button>
+        <article class="text_input-container">
+          <input class="text_input" type="text" name="" id="">
+          <button class="text_input-btn">Click</button>
+          <p class="text_input-output">Introduce a color: red, blue or green</p>
+        </article>
+      </section>
     </main>
 
     <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
