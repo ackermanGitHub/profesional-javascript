@@ -105,3 +105,6 @@ dist
 
 # binary files
 *.mp4
+
+#ejercicios
+/ejercicios
