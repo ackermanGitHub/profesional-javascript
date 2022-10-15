@@ -1,5 +1,6 @@
 import MediaPlayer from "./MediaPlayer.js";
 import AutoPlay from "./plugins/AutoPlay.js";
+import AutoPause from "./plugins/AutoPause.js";
 
 const video = document.querySelector('.movie');
 const playButton = document.querySelector('.play_btn');
@@ -51,3 +52,8 @@ textInputBtn.addEventListener('click', () => {
         textOutput.innerHTML = `no se encontró`;  
     }
 })
+
+const autoPause = new AutoPause();
+console.log(autoPause);
+autoPause.run(player);
+
