@@ -15,6 +15,14 @@ const player = new MediaPlayer({
 playButton.onclick = () => player.togglePlay();
 muteButton.onclick = () => player.toggleMute();
 
+
+//
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(error => {
+        console.log(error.message);
+    })
+}
+
 // text_input-container
 const textInput = document.querySelector('.text_input'); 
 const textInputBtn = document.querySelector('.text_input-btn'); 
@@ -54,6 +62,6 @@ textInputBtn.addEventListener('click', () => {
 })
 
 const autoPause = new AutoPause();
-console.log(autoPause);
+//console.log(autoPause);
 autoPause.run(player);
 
