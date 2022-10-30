@@ -6,15 +6,13 @@ self.addEventListener('install', event => {
   
   self.addEventListener('fetch', event => {
     const request = event.request;
-    // get
+
     if (request.method !== 'GET') {
       return;
     }
   
-    // buscar en cache
     event.respondWith(cachedResponse(request));
   
-    // actualizar el cache
     event.waitUntil(updateCache(request));
   });
 
@@ -28,7 +26,7 @@ async function precache() {
       './assets/plugins/AutoPlay.js',
       './assets/plugins/AutoPause.js',
       './assets/index.css',
-      './assets/BigBuckBunny.mp4',
+      './assets/BigBuckBunny.mp4'
     ]);
   }
 
@@ -39,20 +37,10 @@ async function precache() {
     return response || fetch(request);
   }
 
-//async function updateCache(request) {
-//    const cache = await caches.open(VERSION);
-//    const response = await fetch(request);
-//    return cache.put(request, response);
-//}
 
-// it updates the cache given a request
 async function updateCache(request) {
     const cache = await caches.open(VERSION);
     const response = await fetch(request);
-    console.log(cache);
-    console.log(response);
-    // Cache.put when status code is 200 
-    // Otherwise return a simple promise 
     return response.status === 200 
         ? cache.put(request, response) 
         : new Promise((resolve, reject) => resolve(':D'));    

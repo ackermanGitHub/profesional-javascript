@@ -19,11 +19,9 @@ export default class AutoPause {
 
     handleVisibilityChange() {
         const isVisible = document.visibilityState === "visible";
-        if (isVisible) {
-            console.log("visible");            
+        if (isVisible) {         
             this.player.media.play();
-        } else {
-            console.log("hidden");            
+        } else {        
             this.player.media.pause();
         }
     }
