@@ -1,4 +1,10 @@
+import AutoPause from "./plugins/AutoPause";
+import AutoPlay from "./plugins/AutoPlay";
+
 export default class MediaPlayer {
+    media: HTMLMediaElement;
+    plugins: Array<AutoPlay | AutoPause>;
+
     constructor({video, plugins}) {
         this.media = video;
         this.plugins = plugins || [];

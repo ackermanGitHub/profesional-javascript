@@ -1,20 +1,25 @@
-import MediaPlayer from "./MediaPlayer.js";
-import AutoPlay from "./plugins/AutoPlay.ts";
-import AutoPause from "./plugins/AutoPause.ts";
+import MediaPlayer from "./MediaPlayer";
+import AutoPlay from "./plugins/AutoPlay";
+import AutoPause from "./plugins/AutoPause";
+import Levenshtein from 'fast-levenshtein';
 
 const video = document.querySelector('.movie');
-const playButton = document.querySelector('.play_btn');
-const muteButton = document.querySelector('.mute_btn');
-
 const player = new MediaPlayer({
     video,
     plugins: [
-        new AutoPlay()
+        new AutoPlay(),
+        new AutoPause()
     ]
 });
+
+const playButton: HTMLElement = document.querySelector('.play_btn')!;
 playButton.onclick = () => player.togglePlay();
+
+const muteButton: HTMLElement = document.querySelector('.mute_btn')!;
 muteButton.onclick = () => player.toggleMute();
 
+//const autoPause = new AutoPause();
+//autoPause.run(player);
 
 //
 //if ('serviceWorker' in navigator) {
@@ -24,9 +29,9 @@ muteButton.onclick = () => player.toggleMute();
 //}
 
 // text_input-container
-const textInput = document.querySelector('.text_input'); 
-const textInputBtn = document.querySelector('.text_input-btn'); 
-const textOutput = document.querySelector('.text_input-output');
+const textInput: HTMLInputElement = document.querySelector('.text_input')!; 
+const textInputBtn: HTMLButtonElement = document.querySelector('.text_input-btn')!; 
+const textOutput: HTMLParagraphElement = document.querySelector('.text_input-output')!;
 
 const target = {
     red: 'Rojo',
@@ -60,8 +65,4 @@ textInputBtn.addEventListener('click', () => {
         textOutput.innerHTML = `no se encontró`;  
     }
 })
-
-const autoPause = new AutoPause();
-//console.log(autoPause);
-autoPause.run(player);
 

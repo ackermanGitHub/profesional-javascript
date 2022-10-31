@@ -21,8 +21,8 @@ async function precache() {
     return cache.addAll([
       //'./',
       //'./index.html',
-      //'./assets/index.js',
-      //'./assets/MediaPlayer.js',
+      //'./assets/index.ts',
+      //'./assets/MediaPlayer.ts',
       //'./assets/plugins/AutoPlay.ts',
       //'./assets/plugins/AutoPause.ts',
       //'./assets/index.css',

@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/ackermanGitHub/profesional-javascript#readme",
   "devDependencies": {
+    "@types/fast-levenshtein": "^0.0.2",
+    "fast-levenshtein": "^3.0.0",
     "parcel": "^2.7.0"
   },
   "browserslist": [
