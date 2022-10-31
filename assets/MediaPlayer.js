@@ -5,19 +5,8 @@ export default class MediaPlayer {
         this._initPlugins();
     } 
     _initPlugins = function () {
-        const player = {
-            play: () => this.togglePlay(),
-            pause: () => this.pause(),
-            media: this.media,
-            get muted() {
-                return this.media.muted;
-            },
-            set muted(value) {
-                this.media.muted = value;
-            },
-        }
         this.plugins.forEach(plugin => {
-            plugin.run(player);
+            plugin.run(this);
         });
     }
     togglePlay() {

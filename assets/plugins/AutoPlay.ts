@@ -1,8 +1,10 @@
+import MediaPlayer from "../MediaPlayer";
+
 export default class AutoPlay {
-    run(player) {
-        if (!player.muted) {
-            player.muted = true;
+    run(player: MediaPlayer) {
+        if (!player.media.muted) {
+            player.media.muted = true;
         }
-        player.play();
+        player.media.play();
     }
 }
