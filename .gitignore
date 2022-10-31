@@ -106,8 +106,5 @@ dist
 # binary files
 *.mp4
 
-#ejercicios
-/ejercicios
-
 # Parcel-Cache
 .parcel-cache
