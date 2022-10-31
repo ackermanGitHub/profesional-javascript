@@ -13,11 +13,7 @@ export default class MediaPlayer {
                 return this.media.muted;
             },
             set muted(value) {
-                if (value === true) {
-                    this.media.muted = true;
-                } else {
-                    this.media.muted = false;
-                }
+                this.media.muted = value;
             },
         }
         this.plugins.forEach(plugin => {

@@ -19,14 +19,14 @@ self.addEventListener('install', event => {
 async function precache() {
     const cache = await caches.open(VERSION);
     return cache.addAll([
-      './',
-      './index.html',
-      './assets/index.js',
-      './assets/MediaPlayer.js',
-      './assets/plugins/AutoPlay.js',
-      './assets/plugins/AutoPause.js',
-      './assets/index.css',
-      './assets/BigBuckBunny.mp4'
+      //'./',
+      //'./index.html',
+      //'./assets/index.js',
+      //'./assets/MediaPlayer.js',
+      //'./assets/plugins/AutoPlay.ts',
+      //'./assets/plugins/AutoPause.ts',
+      //'./assets/index.css',
+      //'./assets/BigBuckBunny.mp4'
     ]);
   }
 
@@ -37,6 +37,11 @@ async function precache() {
     return response || fetch(request);
   }
 
+//async function updateCache(request) {
+//    const cache = await caches.open(VERSION);
+//    const response = await fetch(request);
+//    return cache.put(request, response);
+//}
 
 async function updateCache(request) {
     const cache = await caches.open(VERSION);
